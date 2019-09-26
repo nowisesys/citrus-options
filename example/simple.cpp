@@ -20,11 +20,6 @@ int main(int argc, const char **argv)
 {
         Citrus::Options options(argc, argv);
 
-        if (options.HasOption("--help")) {
-                std::cout << "usage: " << options.GetProgram() << " [--key1=val1 --key2=...]\n";
-                return 0;
-        }
-
         for (auto option : options.GetOptions()) {
                 std::cout << option.first << "=" << option.second << "\n";
         }
