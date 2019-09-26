@@ -20,3 +20,7 @@ missing
 src/Makefile
 src/Makefile.in
 *.log
+example/defaults
+example/listing
+example/program
+example/simple
