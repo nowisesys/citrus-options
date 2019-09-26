@@ -98,6 +98,10 @@ Pass --prefix=path to configure or use DESTDIR for make install to install in no
 
 See the examples directory for complete code ready to be run.
 
+## License
+
+This library is released under LGPL-3.0 and can be linked and used with commercial applications.
+
 ## Bug report & suggestions
 
 Please see the AUTHORS file for contact information. Feel free to submit bug reports and suggestions.
