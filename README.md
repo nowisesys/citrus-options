@@ -11,8 +11,8 @@ Instead of using an fixed structure of accepted options that input options are v
 An standard program with support for --help and --version might use this boiler plate code:
 
 ```c++
-#include "options.hpp"
 #include <iostream>
+#include <citrus/options.hpp>
 
 int main(int argc, const char **argv)
 {
@@ -50,8 +50,8 @@ int main(int argc, const char **argv)
 Any --xxx or -x options ends up in the options map. Command line arguments not starting with an dash ('-') will end up in the listings array and can be processed by calling the GetListing() method:
 
 ```c++
-#include "options.hpp"
 #include <iostream>
+#include <citrus/options.hpp>
 
 int main(int argc, const char **argv)
 {
