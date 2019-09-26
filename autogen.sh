@@ -1,1 +1,1 @@
-autoreconf --install || exit 1
+autoreconf --force --install -I m4 || exit 1
