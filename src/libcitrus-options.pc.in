@@ -5,7 +5,7 @@ includedir=@includedir@
 
 Name: libcitrus-options
 Description: Command line options for C++
-URL: http://nowsise.se/oss/citrus/options
+URL: https://nowise.se/oss/citrus/options
 Version: @VERSION@
 Requires: 
 Libs: -L${libdir} -lcitrus-options
