@@ -20,9 +20,37 @@
 #include <string>
 #include <vector>
 
+#if defined(WIN32) || defined(_WINDOWS) || defined(__CYGWIN__)
+/* Define LIBCITRUS_EXPORTS when building library on windows. */
+#if defined(LIBCITRUS_EXPORTS)
+#if defined(__GNUC__)
+#define LIBCITRUS_API_PUBLIC __attribute__((dllexport))
+#else
+/* Note: GCC seems to support this syntax too. */
+#define LIBCITRUS_API_PUBLIC __declspec(dllexport)
+#endif
+#else
+#if defined(__GNUC__)
+#define LIBCITRUS_API_PUBLIC __attribute__((dllimport))
+#else
+/* Note: actually gcc seems to also supports this syntax. */
+#define LIBCITRUS_API_PUBLIC __declspec(dllimport)
+#endif
+#endif
+#define LIBCITRUS_API_HIDDEN
+#else
+#if __GNUC__ >= 4
+#define LIBCITRUS_API_PUBLIC __attribute__((visibility("default")))
+#define LIBCITRUS_API_HIDDEN __attribute__((visibility("hidden")))
+#else
+#define LIBCITRUS_API_PUBLIC
+#define LIBCITRUS_API_HIDDEN
+#endif
+#endif
+
 namespace Citrus {
 
-        struct Option
+        struct LIBCITRUS_API_PUBLIC Option
         {
                 Option() = default;
                 Option(const Option &) = default;
@@ -42,7 +70,7 @@ namespace Citrus {
                 std::string val;
         };
 
-        class Options
+        class LIBCITRUS_API_PUBLIC Options
         {
             public:
                 Options() = default;
